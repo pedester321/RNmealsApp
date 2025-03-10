@@ -1,10 +1,18 @@
 import { useLayoutEffect } from "react";
-import { View, Text, StyleSheet, Image, ScrollView, Button } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Button,
+} from "react-native";
 
 import { MEALS } from "../data/dummy-data";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/MealDetail/Subtitle";
 import List from "../components/MealDetail/List";
+import IconButton from "../components/IconButton";
 
 function MealDetailScreen({ route, navigation }) {
   const mealId = route.params.id;
@@ -13,15 +21,21 @@ function MealDetailScreen({ route, navigation }) {
 
   useLayoutEffect(() => {
     const mealTitle = meal.title;
-    navigation.setOptions({ 
-        title: mealTitle, 
-        headerRight: () => {
-           return <Button title="Favorite" onPress={headerButtonPressHandler} />
-        }
+    navigation.setOptions({
+      title: mealTitle,
+      headerRight: () => {
+        return (
+          <IconButton
+            icon={"star"}
+            color={"white"}
+            onPress={headerButtonPressHandler}
+          />
+        );
+      },
     });
   }, [meal, navigation, headerButtonPressHandler]);
 
-  function headerButtonPressHandler(){
+  function headerButtonPressHandler() {
     console.log("Button pressed");
   }
 
@@ -32,11 +46,11 @@ function MealDetailScreen({ route, navigation }) {
   };
 
   return (
-    <ScrollView  contentContainerStyle={styles.screen} >
+    <ScrollView contentContainerStyle={styles.screen}>
       <Image source={{ uri: meal.imageUrl }} style={styles.image} />
       <Text style={styles.title}>{meal.title}</Text>
       <MealDetails {...details} textStyle={styles.textStyle} />
-      <View style={styles.listContainer} >
+      <View style={styles.listContainer}>
         <Subtitle>Ingredients</Subtitle>
         <List data={meal.ingredients} />
         <Subtitle>Steps</Subtitle>
