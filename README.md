@@ -9,10 +9,10 @@ Aplicativo de receitas com navegação completa que organiza pratos por categori
   <img src="screenshots/tela1.png" width="200" alt="Tela de categorias"/>
   <img src="screenshots/tela2.png" width="200" alt="Lista de receitas"/>  
   <img src="screenshots/tela3.png" width="200" alt="Detalhes da receita"/>
+</p>
+<p align="center">
   <img src="screenshots/tela4.png" width="200" alt="Aba de navegação"/>
   <img src="screenshots/tela5.png" width="200" alt="Tela de favoritos"/>
-
-
 </p>
 
 ## ✨ Funcionalidades
@@ -46,6 +46,13 @@ Aplicativo de receitas com navegação completa que organiza pratos por categori
   - @react-navigation/drawer
 - Context API
 - Dummy data (fornecido pelo curso)
+
+## 🧠 O Que Aprendi
+- Configuração de múltiplos tipos de navegação
+- Aninhamento de navigators (Stack dentro de Drawer)
+- Uso do Native Stack para performance
+- Gerenciamento de estado com Context API
+- Passagem de parâmetros entre rotas
 
 ## 🚀 Como Executar
 
