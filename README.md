@@ -59,7 +59,7 @@ Aplicativo de receitas com navegação completa que organiza pratos por categori
 1. Clone o repositório:
 ```bash
 git clone https://github.com/pedester321/RNmealsApp
-cd meals-app
+cd mealsApp
 ```
 
 2. Instale as dependências:
